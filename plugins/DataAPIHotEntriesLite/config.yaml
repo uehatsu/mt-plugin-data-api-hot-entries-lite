@@ -1,0 +1,18 @@
+id: DataAPIHotEntriesLite
+name: DataAPI HotEntries Lite
+version: 0.10
+description: <__trans phrase="Hot entries JSON output plugin via DataAPI.">
+author_name: Hatsuhito UENO a.k.a uehatsu
+author_link: https://uehatsu.info/
+doc_link: https://github.com/uehatsu/mt-plugin-data-api-hot-entries-lite
+l10n_class: DataAPIHotEntriesLite::L10N
+
+applications:
+  data_api:
+    endpoints:
+      - id: get_hot_entries
+        route: /sites/:site_id/hot-entries
+        verb: GET
+        version: 2
+        handler: $DataAPIHotEntriesLite::DataAPIHotEntriesLite::EndPoint::HotEntries::get_hot_entries
+        requires_login: 0
